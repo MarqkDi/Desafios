@@ -17,3 +17,8 @@ def valorLog():
         return None
     
     return logaritmando, base
+
+def listaEstatisticas():
+    entrada = input('Digite os items separados por espaço: ')
+    lista = entrada.split()
+    return lista
