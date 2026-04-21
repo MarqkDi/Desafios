@@ -1,0 +1,6 @@
+def soma(a,b): return a + b
+def sub(a,b): return a - b
+def mult(a,b): return a * b
+def div(a,b): return a / b if b != 0 else None
+def divInt(a,b): return a // b if b != 0 else None
+def poten(a,b): return a ** b
