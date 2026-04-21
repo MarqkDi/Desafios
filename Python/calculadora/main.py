@@ -1,9 +1,11 @@
 #Estudo independente em python
 #Data: 21/04/26
 from simples import soma, mult, sub, div, divInt, poten
-from cientifica import raizQuadrada, fatorial
-from utils import coletarValoresS, coletarValoresC
+from cientifica import raizQuadrada, fatorial, log
+from utils import coletarValoresS, coletarValoresC, valorLog
+
 exit = 'N'
+
 print(f'{'Bem-Vindo à Calculadora':=^50}')
 print('Feito por: MarqkDi')
 print('=' * 50)
@@ -38,26 +40,35 @@ while exit == 'N':
         print('1 - Raiz quadrada \n2 - Logaritmo \n3 - Fatorial \n4 - Máximo divisor comum \n5 - Mínimo múltiplo comum \n6 - Cosseno \n7 - Seno \n8 - Tangente')
         escolhaCOp = int(input('Qual tipo de operação deseja?: '))
 
-        v1 = coletarValoresC()
-
         if escolhaCOp == 1:
+            v1 = coletarValoresC()
             resultado = raizQuadrada(v1)
-
             if resultado is not None:
                 print(f'A Raiz aproximada é: {resultado:.2f}')
             else:
                 print('Resultado não encontrado')
 
+        elif escolhaCOp == 2:
+            valores = valorLog()
+            if valores is not None:
+                logaritmando, base = valores
+                resultado = log(logaritmando, base)
+                if resultado is not None:
+                    print(f'O logaritmo exato é: {resultado}')
+                else:
+                    print('Resultado não encontrado (Não é exato)!')
+            
         elif escolhaCOp == 3:
+            v1 = coletarValoresC()
             resultado = fatorial(v1)
-        
-        if resultado is not None:
-            print(f'{v1}! é igual à: {resultado}')
-        else:
-            print('Valor inválido!')
+            if resultado is not None:
+                print(f'{v1}! é igual à: {resultado}')
+            else:
+                print('Valor inválido!')
 
     else:
-        print('Escolha inválida!')
+        print('Opção inválida!')
+        continue
     
     #Escolha de fechamento da aplicação
     while True:

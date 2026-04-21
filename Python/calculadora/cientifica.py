@@ -10,7 +10,14 @@ def fatorial(a):
         return None
 
     resultado = 1
-
     for i in range(a, 1, -1):
         resultado *= i 
     return resultado
+
+def log(a, b):
+    for i in range(a):
+        calc = b ** i
+        if calc == a:
+            resultado = i
+            return resultado
+    return None
