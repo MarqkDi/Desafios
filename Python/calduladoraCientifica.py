@@ -6,80 +6,76 @@ print(f'{'Bem-Vindo à Calculadora':=^50}')
 print('Feito por: MarqkDi')
 print('=' * 50)
 
+# Funções
+def coletarValores():
+    valor1 = float(input('Digite o primeiro valor: '))
+    valor2 = float(input('Digite o segundo valor: '))
+    return valor1, valor2
+
+# Calculadora Simples
+def soma(a,b): return a + b
+def sub(a,b): return a - b
+def mult(a,b): return a * b
+def div(a,b): return a / b if b != 0 else None
+def divInt(a,b): return a // b if b != 0 else None
+def poten(a,b): return a ** b
+
+#Calculadora Científica
+def raizQuadrada(a):
+    for i in np.arange(0, a + 1, 0.00001):
+        if abs(i * i - a) < 0.001:
+            return i
+    return None
+
 while exit == 'N':
     print('1 - Calculadora Simples')
     print('2 - Calculadora Científica')
     escolhaCalc = int(input('Escolha o tipo de calculadora: '))
-    def coletarValores():
-        valor1 = float(input('Digite o primeiro valor: '))
-        valor2 = float(input('Digite o segundo valor: '))
-        return valor1, valor2
     if escolhaCalc == 1:
-        print('1 - Soma')
-        print('2 - Subtração')
-        print('3 - Multiplicação')
-        print('4 - Divisão')
-        print('5 - Divisão Inteira')
-        print('6 - Potenciação')
+        print('1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n5 - Divisão Inteira\n6 - Potenciação')
         escolhaSOp = int(input('Qual tipo de operação deseja?: '))
-        def soma(a,b):
-            return a + b
-        def sub(a,b):
-            return a - b
-        def mult(a,b):
-            return a * b
-        def div(a,b):
-            return a / b
-        def divInt(a,b):
-            return a // b
-        def poten(a,b):
-            return a ** b
-        if escolhaSOp == 1:
-            v1, v2 = coletarValores()
-            resultado = soma(v1, v2)
-            print(f'O resultado da soma é: {resultado:.2f}')
-        elif escolhaSOp == 2:
-            v1, v2 = coletarValores()
-            resultado = sub(v1, v2)
-            print(f'O resultado da subtração é: {resultado:.2f}')
-        elif escolhaSOp == 3:
-            v1, v2 = coletarValores()
-            resultado = mult(v1, v2)
-            print(f'O resultado da multiplicação é: {resultado:.2f}')
-        elif escolhaSOp == 4:
-            v1, v2 = coletarValores()
-            resultado = div(v1, v2)
-            print(f'O resultado da divisão é: {resultado:.2f} \nCom um resto de {v1 % v2}')
-        elif escolhaSOp == 5:
-            v1, v2 = coletarValores()
-            resultado = divInt(v1, v2)
-            print(f'O resultado da divisão inteira é: {resultado}')
-        elif escolhaSOp == 6:
-            v1, v2 = coletarValores()
-            resultado = poten(v1, v2)
-            print(f'O resultado da potenciação é: {resultado:.2f}')
+
+        v1, v2 = coletarValores()
+
+        if escolhaSOp == 1: resultado = soma(v1, v2)
+        elif escolhaSOp == 2: resultado = sub(v1, v2)
+        elif escolhaSOp == 3: resultado = mult(v1, v2)
+        elif escolhaSOp == 4: resultado = div(v1, v2)
+        elif escolhaSOp == 5: resultado = divInt(v1, v2)
+        elif escolhaSOp == 6: resultado = poten(v1, v2)
+        else:
+            print('Opção inválida')
+            continue
+
+        if resultado is None:
+            print('Erro: divisão por zero!')
+        else:
+            print(f'Resultado: {resultado:.2f}')
+        
     elif escolhaCalc == 2:
-        print('1 - Raiz quadrada')
-        print('2 - Logaritmo')
-        print('3 - Fatorial')
-        print('4 - Máximo divisor comum')
-        print('5 - Mínimo múltiplo comum')
-        print('6 - Cosseno')
-        print('7 - Seno')
-        print('8 - Tangente')
+
+        print('1 - Raiz quadrada \n2 - Logaritmo \n3 - Fatorial \n4 - Máximo divisor comum \n5 - Mínimo múltiplo comum \n6 - Cosseno \n7 - Seno \n8 - Tangente')
         escolhaCOp = int(input('Qual tipo de operação deseja?: '))
+
         if escolhaCOp == 1:
-            def raizQuadrada(a):
-                for i in np.arange(0, a + 1, 0.00001):
-                    if abs(i * i - a) < 0.001:
-                        return i
-                return None
+
             valRQ = float(input('Digite o valor que deseja descobrir a Raiz Quadrada: '))
             resultado = raizQuadrada(valRQ)
+
             if resultado is not None:
                 print(f'A Raiz aproximada é: {resultado:.2f}')
             else:
                 print('Resultado não encontrado')
     else:
         print('Escolha inválida!')
-    exit = input('Deseja fechar a aplicação?(Y/N) ').upper()
+    
+    #Escolha de fechamento da aplicação
+    while True:
+        exit = input('Deseja fechar a aplicação?(Y/N) ').upper()
+
+        if exit == 'Y':
+            break
+        elif exit == 'N':
+            break
+        else:
+            print('Escolha inválida')
