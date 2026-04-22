@@ -8,3 +8,11 @@ def mediana(a):
         return a[meio]
     else:
         return meioDiv
+    
+def media(a):
+    soma = 0
+    qnt = len(a)
+    for item in a:
+        soma = item + soma
+    media = soma / qnt
+    return media

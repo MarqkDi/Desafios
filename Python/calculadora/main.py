@@ -2,7 +2,7 @@
 #Data: 21/04/26
 from simples import soma, mult, sub, div, divInt, poten
 from cientifica import raizQuadrada, fatorial, log
-from estatisticas import mediana
+from estatisticas import mediana, media
 from utils import coletarValoresS, coletarValoresC, valorLog, listaEstatisticas
 
 sair = 'N'
@@ -112,7 +112,7 @@ while sair == 'N':
         if escolhaEOp == 1:
             if lista is not None:
                 resultado = mediana(lista)
-                print(f'A mediana da lista é: {resultado}')
+                print(f'A mediana da lista é: {resultado:.2f}')
             else: 
                 print('Digite apenas números!')
         
@@ -120,11 +120,8 @@ while sair == 'N':
             print('Em trabalho')
 
         elif escolhaEOp == 3:
-            print('Em trabalho')
-        
-        else:
-            print('Opção inválida')
-            continue
+            resultado = media(lista)
+            print(f'A média é: {resultado:.2f}')
     
     #Fechamento da aplicação no menu
     elif escolhaCalc == 0: 

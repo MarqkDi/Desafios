@@ -22,11 +22,11 @@ def listaEstatisticas():
     entrada = input('Digite os items separados por espaço: ')
     lista = entrada.split()
 
-    listaInt = []
+    listaFlo = []
     for item in lista:
         try:
-            listaInt.append(int(item))
+            listaFlo.append(float(item))
         except ValueError:
             return None
 
-    return listaInt
+    return listaFlo
