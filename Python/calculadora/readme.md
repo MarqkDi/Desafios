@@ -1,0 +1,1 @@
+Calculadora científica em python, criado com o intuito de expandir meu conhecimento na linguagem e testar a mim mesmo sem usar bibliotecas que entregam resultados prontos (Usando apenas se necessário).

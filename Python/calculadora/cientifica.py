@@ -1,4 +1,5 @@
 import numpy as np
+#Poderia ter feito em pesquisa binária pra usar o mínimo de bibliotecas, porém preciso estudar mais pra entender a aplicação. (Posso atualizar em um futuro próximo.)
 def raizQuadrada(a):
     for i in np.arange(0, a + 1, 1e-6):
         if abs(i * i - a) < 0.001:
