@@ -1,10 +1,20 @@
-import numpy as np
-#Poderia ter feito em pesquisa binária pra usar o mínimo de bibliotecas, porém preciso estudar mais pra entender a aplicação. (Posso atualizar em um futuro próximo.)
-def raizQuadrada(a):
-    for i in np.arange(0, a + 1, 1e-6):
-        if abs(i * i - a) < 0.001:
-            return i
-    return None
+def raizQuadrada(a, precisao = 0.0001, max_iteracao = 1000):
+
+    inicio = 0
+    fim = a
+    iteracao = 0
+
+    while (fim - inicio) > precisao and iteracao < max_iteracao:
+        meio = (inicio + fim) / 2
+
+        if meio * meio < a:
+            inicio = meio
+        else:
+            fim = meio
+
+        iteracao += 1
+
+    return (inicio + fim) / 2
 
 def fatorial(a):
     if a < 0:
