@@ -1,5 +1,5 @@
 def mediana(a):
-    a.sort()
+    a = sorted(a)
     qnt = len(a)
     meio = qnt // 2
     meioDiv = (a[meio] + a[meio - 1]) / 2
@@ -13,6 +13,6 @@ def media(a):
     soma = 0
     qnt = len(a)
     for item in a:
-        soma = item + soma
+        soma += item
     media = soma / qnt
     return media

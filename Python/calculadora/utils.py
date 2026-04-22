@@ -4,8 +4,12 @@ def coletarValoresS():
     return valor1, valor2
 
 def coletarValoresC():
-    valor = int(input('Diite o valor: '))
-    return valor
+    try:
+        valor = int(input('Digite o valor: '))
+        return valor
+    except ValueError:
+        print('Digite apenas números!')
+        return None
 
 def valorLog():
     logaritmando = int(input('Qual o logaritmando: '))
@@ -27,6 +31,7 @@ def listaEstatisticas():
         try:
             listaFlo.append(float(item))
         except ValueError:
+            print('Digite apenas Números!')
             return None
 
     return listaFlo

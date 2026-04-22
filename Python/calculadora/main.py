@@ -56,11 +56,12 @@ while sair == 'N':
 
         if escolhaCOp == 1:
             v1 = coletarValoresC()
-            resultado = raizQuadrada(v1)
-            if resultado is not None:
-                print(f'A Raiz aproximada é: {resultado:.2f}')
-            else:
-                print('Resultado não encontrado')
+            if v1 is not None:
+                resultado = raizQuadrada(v1)
+                if resultado is not None:
+                    print(f'A Raiz aproximada é: {resultado:.2f}')
+                else:
+                    print('Resultado não encontrado')
 
         elif escolhaCOp == 2:
             valores = valorLog()
@@ -74,11 +75,12 @@ while sair == 'N':
             
         elif escolhaCOp == 3:
             v1 = coletarValoresC()
-            resultado = fatorial(v1)
-            if resultado is not None:
-                print(f'{v1}! é igual à: {resultado}')
-            else:
-                print('Valor inválido!')
+            if v1 is not None:
+                resultado = fatorial(v1)
+                if resultado is not None:
+                    print(f'{v1}! é igual à: {resultado}')
+                else:
+                    print('Valor inválido!')
         
         elif escolhaCOp == 4:
             print('Em trabalho')
@@ -113,16 +115,15 @@ while sair == 'N':
             if lista is not None:
                 resultado = mediana(lista)
                 print(f'A mediana da lista é: {resultado:.2f}')
-            else: 
-                print('Digite apenas números!')
         
         elif escolhaEOp == 2:
             print('Em trabalho')
 
         elif escolhaEOp == 3:
-            resultado = media(lista)
-            print(f'A média é: {resultado:.2f}')
-    
+            if lista is not None:
+                resultado = media(lista)
+                print(f'A média é: {resultado:.2f}')
+
     #Fechamento da aplicação no menu
     elif escolhaCalc == 0: 
         print('Você será sempre Bem-Vindo de volta!')
@@ -141,6 +142,6 @@ while sair == 'N':
         if sair == 'Y':
             break
         elif sair == 'N':
-            break
+            continue
         else:
             print('Escolha inválida')
