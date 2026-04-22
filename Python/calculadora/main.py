@@ -102,8 +102,11 @@ while sair == 'N':
         lista = listaEstatisticas()
 
         if escolhaEOp == 1:
-            resultado = mediana(lista)
-            print(f'A mediana da lista é: {resultado}')
+            if lista is not None:
+                resultado = mediana(lista)
+                print(f'A mediana da lista é: {resultado}')
+            else: 
+                print('Digite apenas números!')
         
         elif escolhaEOp == 2:
             print('Em trabalho')

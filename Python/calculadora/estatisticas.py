@@ -1,15 +1,10 @@
 def mediana(a):
-
-    listaInt = []
-    for item in a:
-        listaInt.append(int(item))
-
-    listaInt.sort()
-    qnt = len(listaInt)
+    a.sort()
+    qnt = len(a)
     meio = qnt // 2
-    meioDiv = (listaInt[meio] + listaInt[meio - 1]) / 2
+    meioDiv = (a[meio] + a[meio - 1]) / 2
     
     if qnt % 2 != 0:
-        return listaInt[meio]
+        return a[meio]
     else:
         return meioDiv

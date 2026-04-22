@@ -21,4 +21,12 @@ def valorLog():
 def listaEstatisticas():
     entrada = input('Digite os items separados por espaço: ')
     lista = entrada.split()
-    return lista
+
+    listaInt = []
+    for item in lista:
+        try:
+            listaInt.append(int(item))
+        except ValueError:
+            return None
+
+    return listaInt
